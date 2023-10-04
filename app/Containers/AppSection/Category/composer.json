@@ -1,0 +1,7 @@
+{
+    "name": "apiato/category",
+    "description": "Category Container for apiato.",
+    "require": {
+        "kalnoy/nestedset": "^6.0"
+    }
+}

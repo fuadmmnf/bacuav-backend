@@ -1,0 +1,29 @@
+{
+    "name": "apiato/documentation-generator-container",
+    "description": "An Apiato container which can creates a documentation from API annotations in your source code.",
+    "type": "apiato-container",
+    "license": "MIT",
+    "extra": {
+        "apiato": {
+            "container": {
+                "name": "Documentation"
+            }
+        },
+        "laravel": {
+            "providers": [
+                "App\\Containers\\Vendor\\Documentation\\Providers\\DocumentGeneratorServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "apiato/core": "^v8.1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "apiato/container-installer": true
+        }
+    }
+}
