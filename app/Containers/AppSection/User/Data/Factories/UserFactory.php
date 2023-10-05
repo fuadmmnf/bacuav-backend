@@ -25,7 +25,7 @@ class UserFactory extends ParentFactory
             'address' => $this->faker->randomElement(['rajshahi', 'dhaka', 'chittagong']),
             'photo' => $this->faker->imageUrl(),
             'dob' => $this->faker->dateTimeBetween(startDate: '-50', endDate: '-20'),
-            'is_verified' => $this->faker->randomElement([true, false]),
+            'is_verified' => $this->faker->randomElement([true, true, false]),
             'joining_date' => $this->faker->dateTimeBetween(startDate: '-15', endDate: '-5'),
             'fee_collection_start' => $this->faker->dateTimeBetween(startDate: '-10', endDate: 'now'),
 //            'email_verified_at' => now(),
