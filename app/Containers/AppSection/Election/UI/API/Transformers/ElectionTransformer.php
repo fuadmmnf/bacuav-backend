@@ -4,16 +4,22 @@ namespace App\Containers\AppSection\Election\UI\API\Transformers;
 
 use App\Containers\AppSection\Election\Models\Election;
 use App\Ship\Parents\Transformers\Transformer as ParentTransformer;
+use League\Fractal\Resource\Collection;
 
 class ElectionTransformer extends ParentTransformer
 {
     protected array $defaultIncludes = [
-
+        'children',
     ];
 
     protected array $availableIncludes = [
-
+        'children',
     ];
+
+    public function includeChildren(Election $election): Collection
+    {
+        return $this->collection($election->children, new ElectionTransformer());
+    }
 
     public function transform(Election $election): array
     {
