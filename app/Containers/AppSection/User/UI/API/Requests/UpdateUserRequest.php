@@ -3,6 +3,7 @@
 namespace App\Containers\AppSection\User\UI\API\Requests;
 
 use App\Containers\AppSection\Authorization\Traits\IsResourceOwnerTrait;
+use App\Containers\AppSection\User\Models\User;
 use App\Ship\Parents\Requests\Request as ParentRequest;
 
 class UpdateUserRequest extends ParentRequest
@@ -35,9 +36,25 @@ class UpdateUserRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            'name' => 'min:2|max:50',
+            'mobile' => 'required|unique:users,mobile,' . $this->user->id,
+            'email' => 'required|email|unique:users,email,' . $this->user->id,
+            'password' => [
+                'required',
+                User::getPasswordValidationRules(),
+            ],
+            'name' => 'required|min:2|max:50',
+            'name_bangla' => 'required|min:2',
+            'designation' => 'required|in:RO,ARO',
+            'commissionerate' => 'required',
+            'division' => 'required',
+            'circle' => 'required',
+            'address' => 'present|nullable',
 //            'gender' => 'in:male,female,unspecified',
-//            'birth' => 'date',
+            'photo' => 'present|image|nullable',
+            'dob' => 'present|date|nullable',
+            'joining_date' => 'present|date|nullable',
+            'fee_collection_start' => 'present|date|nullable',
+            'is_verified' => 'sometimes|bool',
         ];
     }
 
