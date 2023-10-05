@@ -29,7 +29,7 @@ class UpdateUserAction extends ParentAction
         $sanitizedData = $request->sanitizeInput([
             'mobile',
             'email',
-            'password',
+//            'password',
             'name',
             'name_bangla',
             'designation',
