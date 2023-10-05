@@ -12,7 +12,12 @@ return new class extends Migration {
     {
         Schema::create('elections', function (Blueprint $table) {
             $table->id();
-
+            $table->string('title');
+            $table->string('description')->nullable();
+            $table->date('start_time')->nullable();
+            $table->date('end_time')->nullable();
+            $table->date('publish_time')->nullable();
+            $table->nestedSet();
             $table->timestamps();
             //$table->softDeletes();
         });
