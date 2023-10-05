@@ -20,11 +20,11 @@ class CreateUserTask extends ParentTask
      */
     public function run(array $data): User
     {
-//        try {
+        try {
             $user = $this->repository->create($data);
-//        } catch (Exception) {
-//            throw new CreateResourceFailedException();
-//        }
+        } catch (Exception) {
+            throw new CreateResourceFailedException();
+        }
 
         return $user;
     }

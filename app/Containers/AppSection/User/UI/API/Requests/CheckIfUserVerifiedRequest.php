@@ -4,15 +4,13 @@ namespace App\Containers\AppSection\User\UI\API\Requests;
 
 use App\Ship\Parents\Requests\Request as ParentRequest;
 
-class ResetUserPasswordRequest extends ParentRequest
+class CheckIfUserVerifiedRequest extends ParentRequest
 {
-//    use IsResourceOwnerTrait;
-
     /**
      * Define which Roles and/or Permissions has access to this request.
      */
     protected array $access = [
-        'permissions' => '',
+        'permissions' => 'search-users',
         'roles' => '',
     ];
 
@@ -34,9 +32,8 @@ class ResetUserPasswordRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            'identifier' => 'required',
-            'code' => 'required',
-            'password' => 'required|confirmed',
+            // 'id' => 'required',
+            'mobile' => 'required',
         ];
     }
 

@@ -34,4 +34,4 @@
 use App\Containers\AppSection\User\UI\API\Controllers\ResetUserPasswordController;
 use Illuminate\Support\Facades\Route;
 
-Route::patch('users/{id}/password/reset', ResetUserPasswordController::class);
+Route::patch('users/password/reset', ResetUserPasswordController::class);
