@@ -6,7 +6,7 @@ use App\Containers\AppSection\User\Actions\CreateAdminAction;
 use App\Ship\Exceptions\CreateResourceFailedException;
 use App\Ship\Parents\Seeders\Seeder as ParentSeeder;
 
-class AuthorizationDefaultUsersSeeder_4 extends ParentSeeder
+class AuthorizationDefaultUsersSeeder_7 extends ParentSeeder
 {
     public function __construct(
         private readonly CreateAdminAction $createAdminAction
@@ -30,9 +30,12 @@ class AuthorizationDefaultUsersSeeder_4 extends ParentSeeder
     private function createSuperAdmin(): void
     {
         $userData = [
-            'email' => 'admin@admin.com',
+            'mobile' => '00000000000',
+            'email' => 'admin@bacuav.com',
             'password' => 'admin',
             'name' => 'Super Admin',
+            'name_bangla' => 'admin',
+            'is_verified' => true
         ];
 
         $this->createAdminAction->run($userData);

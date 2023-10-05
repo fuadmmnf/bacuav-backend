@@ -13,14 +13,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Validation\Rules\Password;
-use App\Ship\Traits\Uuids;
 
 class User extends ParentUserModel implements MustVerifyEmail
 {
     use AuthorizationTrait;
     use AuthenticationTrait;
     use SoftDeletes;
-    use Uuids;
 
     protected $fillable = [
         'name',

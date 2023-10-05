@@ -11,15 +11,15 @@ return new class () extends Migration {
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('name');
             $table->string('name_bangla');
             $table->string('mobile')->unique();
             $table->string('email')->unique()->nullable();
             $table->enum('designation', ['RO', 'ARO'])->nullable();
-            $table->unsignedBigInteger('commissionerate');
-            $table->unsignedBigInteger('division');
-            $table->unsignedBigInteger('circle');
+            $table->unsignedBigInteger('commissionerate')->nullable();
+            $table->unsignedBigInteger('division')->nullable();
+            $table->unsignedBigInteger('circle')->nullable();
             $table->string('address')->nullable();
             //            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
