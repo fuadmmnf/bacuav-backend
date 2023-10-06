@@ -13,6 +13,7 @@ class Election extends ParentModel
         'end_time',
         'publish_time',
         'status',
+        'parent_id',
     ];
 
     protected $hidden = [

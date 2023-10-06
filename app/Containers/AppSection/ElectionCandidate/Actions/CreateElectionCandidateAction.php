@@ -21,6 +21,9 @@ class CreateElectionCandidateAction extends ParentAction
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'election_id',
+            'candidate_id',
+            'description',
         ]);
 
         return app(CreateElectionCandidateTask::class)->run($data);

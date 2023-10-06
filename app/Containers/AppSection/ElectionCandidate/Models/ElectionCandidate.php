@@ -8,7 +8,8 @@ class ElectionCandidate extends ParentModel
 {
     protected $fillable = [
         'election_id',
-
+        'candidate_id',
+        'description',
     ];
 
     protected $hidden = [

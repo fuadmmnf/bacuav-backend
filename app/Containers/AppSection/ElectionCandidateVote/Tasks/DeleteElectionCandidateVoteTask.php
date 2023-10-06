@@ -13,17 +13,18 @@ class DeleteElectionCandidateVoteTask extends ParentTask
 {
     public function __construct(
         protected ElectionCandidateVoteRepository $repository
-    ) {
+    )
+    {
     }
 
     /**
      * @throws DeleteResourceFailedException
      * @throws NotFoundException
      */
-    public function run($id): int
+    public function run($voter_id, $election_candidate_id): int
     {
         try {
-            return $this->repository->delete($id);
+            return $this->repository->deleteWhere(['voter_id' => $voter_id, 'election_candidate_id' => $election_candidate_id]);
         } catch (ModelNotFoundException) {
             throw new NotFoundException();
         } catch (Exception) {

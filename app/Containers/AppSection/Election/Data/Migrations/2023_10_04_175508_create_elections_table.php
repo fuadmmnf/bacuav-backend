@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->date('start_time')->nullable();
             $table->date('end_time')->nullable();
             $table->date('publish_time')->nullable();
+            $table->nestedSet();
             $table->timestamps();
             //$table->softDeletes();
         });

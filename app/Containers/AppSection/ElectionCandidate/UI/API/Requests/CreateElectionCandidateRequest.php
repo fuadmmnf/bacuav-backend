@@ -36,6 +36,9 @@ class CreateElectionCandidateRequest extends ParentRequest
     {
         return [
             // 'id' => 'required',
+            'election_id' => 'required',
+            'candidate_id' => 'required',
+            'description' => 'present',
         ];
     }
 

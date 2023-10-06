@@ -23,6 +23,7 @@ class CreateElectionAction extends ParentAction
             // add your request data here
             'title',
             'description',
+            'parent_id',
         ]);
 
         return app(CreateElectionTask::class)->run($data);
