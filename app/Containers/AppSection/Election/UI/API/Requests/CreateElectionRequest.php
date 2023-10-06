@@ -36,6 +36,9 @@ class CreateElectionRequest extends ParentRequest
     {
         return [
             // 'id' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+
         ];
     }
 

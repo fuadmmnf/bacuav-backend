@@ -7,7 +7,8 @@ use App\Ship\Parents\Models\Model as ParentModel;
 class ElectionCandidateVote extends ParentModel
 {
     protected $fillable = [
-
+        'election_candidate_id',
+        'candidate_id',
     ];
 
     protected $hidden = [

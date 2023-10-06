@@ -13,14 +13,14 @@ return new class extends Migration {
         Schema::create('election_candidates', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('election_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('candidate_id');
             $table->string('description');
             $table->timestamps();
             //$table->softDeletes();
 
             $table->foreign('election_id')->references('id')->on('elections')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('elections')
+            $table->foreign('candidate_id')->references('id')->on('elections')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }

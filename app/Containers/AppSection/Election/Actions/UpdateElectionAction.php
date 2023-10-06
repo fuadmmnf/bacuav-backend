@@ -9,6 +9,7 @@ use App\Containers\AppSection\Election\UI\API\Requests\UpdateElectionRequest;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Exceptions\UpdateResourceFailedException;
 use App\Ship\Parents\Actions\Action as ParentAction;
+use Carbon\Carbon;
 
 class UpdateElectionAction extends ParentAction
 {
@@ -23,7 +24,16 @@ class UpdateElectionAction extends ParentAction
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'title',
+            'description',
+            'status',
         ]);
+        if ($data['status'] == 'ongoing')
+            $data['start_time'] = Carbon::now();
+        if ($data['status'] == 'finished')
+            $data['end_time'] = Carbon::now();
+        if ($data['status'] == 'published')
+            $data['publish_time'] = Carbon::now();
 
         return app(UpdateElectionTask::class)->run($data, $request->id);
     }

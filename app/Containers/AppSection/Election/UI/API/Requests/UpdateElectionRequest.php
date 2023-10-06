@@ -36,6 +36,9 @@ class UpdateElectionRequest extends ParentRequest
     {
         return [
             // 'id' => 'required'
+            'title' => 'required',
+            'description' => 'required',
+            'status' => 'required',
         ];
     }
 
