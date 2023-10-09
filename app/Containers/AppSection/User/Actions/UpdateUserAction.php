@@ -9,6 +9,7 @@ use App\Containers\AppSection\User\UI\API\Requests\UpdateUserRequest;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Exceptions\UpdateResourceFailedException;
 use App\Ship\Parents\Actions\Action as ParentAction;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class UpdateUserAction extends ParentAction

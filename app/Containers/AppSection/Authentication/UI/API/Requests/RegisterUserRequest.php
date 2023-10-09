@@ -46,7 +46,7 @@ class RegisterUserRequest extends ParentRequest
             'circle' => 'required',
             'address' => 'present|nullable',
 //            'gender' => 'in:male,female,unspecified',
-            'photo' => 'present|image|nullable',
+//            'photo' => 'present|image|nullable',
             'dob' => 'present|nullable',
         ];
     }

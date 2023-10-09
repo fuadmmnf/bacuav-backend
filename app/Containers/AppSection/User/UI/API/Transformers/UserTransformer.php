@@ -27,6 +27,7 @@ class UserTransformer extends ParentTransformer
             'id' => $user->getHashedKey(),
             'name' => $user->name,
             'mobile' => $user->mobile,
+            'is_verified' => $user->is_verified
 //            'email_verified_at' => $user->email_verified_at,
 //            'gender' => $user->gender,
 //            'birth' => $user->birth,

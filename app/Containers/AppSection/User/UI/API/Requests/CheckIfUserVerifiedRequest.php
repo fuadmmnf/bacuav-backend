@@ -4,7 +4,7 @@ namespace App\Containers\AppSection\User\UI\API\Requests;
 
 use App\Ship\Parents\Requests\Request as ParentRequest;
 
-class CheckIfUserVerifiedRequest extends ParentRequest
+class   CheckIfUserVerifiedRequest extends ParentRequest
 {
     /**
      * Define which Roles and/or Permissions has access to this request.
@@ -33,7 +33,7 @@ class CheckIfUserVerifiedRequest extends ParentRequest
     {
         return [
             // 'id' => 'required',
-            'mobile' => 'required',
+//            'mobile' => 'required',
         ];
     }
 

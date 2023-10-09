@@ -18,7 +18,7 @@ class User extends ParentUserModel implements MustVerifyEmail
 {
     use AuthorizationTrait;
     use AuthenticationTrait;
-    use SoftDeletes;
+//    use SoftDeletes;
 
     protected $fillable = [
         'name',
@@ -48,6 +48,7 @@ class User extends ParentUserModel implements MustVerifyEmail
     protected $casts = [
 //        'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'is_verified' => 'bool',
 //        'birth' => 'date',
     ];
 

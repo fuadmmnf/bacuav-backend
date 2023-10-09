@@ -61,7 +61,7 @@ return [
         */
 
         'attributes' => [
-            'email' => ['email'],
+            'mobile' => ['string', 'min:10', 'max:14'],
         ],
 
         /*

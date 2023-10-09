@@ -25,6 +25,4 @@
 use App\Containers\AppSection\Category\UI\API\Controllers\GetAllCategoriesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('categories', GetAllCategoriesController::class)
-    ->middleware(['auth:api']);
-
+Route::get('categories', GetAllCategoriesController::class);

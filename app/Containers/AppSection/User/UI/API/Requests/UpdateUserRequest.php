@@ -36,24 +36,24 @@ class UpdateUserRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            'mobile' => 'required|unique:users,mobile,' . $this->user->id,
-            'email' => 'required|email|unique:users,email,' . $this->user->id,
+            'mobile' => 'sometimes|unique:users,mobile',
+            'email' => 'sometimes|email|unique:users,email',
             'password' => [
-                'required',
+                'sometimes',
                 User::getPasswordValidationRules(),
             ],
-            'name' => 'required|min:2|max:50',
-            'name_bangla' => 'required|min:2',
-            'designation' => 'required|in:RO,ARO',
-            'commissionerate' => 'required',
-            'division' => 'required',
-            'circle' => 'required',
-            'address' => 'present|nullable',
+            'name' => 'sometimes|min:2|max:50',
+            'name_bangla' => 'sometimes|min:2',
+            'designation' => 'sometimes|in:RO,ARO',
+            'commissionerate' => 'sometimes',
+            'division' => 'sometimes',
+            'circle' => 'sometimes',
+            'address' => 'sometimes|nullable',
 //            'gender' => 'in:male,female,unspecified',
-            'photo' => 'present|image|nullable',
-            'dob' => 'present|date|nullable',
-            'joining_date' => 'present|date|nullable',
-            'fee_collection_start' => 'present|date|nullable',
+//            'photo' => 'sometimes|image|nullable',
+            'dob' => 'sometimes|date|nullable',
+            'joining_date' => 'sometimes|date|nullable',
+            'fee_collection_start' => 'sometimes|date|nullable',
             'is_verified' => 'sometimes|bool',
         ];
     }
