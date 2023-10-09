@@ -10,6 +10,7 @@ class CategoryRepository extends ParentRepository
     /**
      * @var array
      */
+    protected ?bool $allowDisablePagination = true;
     protected $fieldSearchable = [
         'id' => '=',
         'name' => '=',
