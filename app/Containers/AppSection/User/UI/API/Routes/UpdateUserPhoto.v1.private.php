@@ -32,5 +32,5 @@
 use App\Containers\AppSection\User\UI\API\Controllers\UpdateUserPhotoController;
 use Illuminate\Support\Facades\Route;
 
-Route::patch('users/{id}/photo', UpdateUserPhotoController::class)
+Route::post('users/{id}/photo', UpdateUserPhotoController::class)
     ->middleware(['auth:api']);

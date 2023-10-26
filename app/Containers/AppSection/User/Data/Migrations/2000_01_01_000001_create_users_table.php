@@ -34,11 +34,11 @@ return new class () extends Migration {
             $table->softDeletes();
 
 
-            $table->foreign('commissionerate')->references('id')->on('categories')
+            $table->foreign('commissionerate_id')->references('id')->on('categories')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('division')->references('id')->on('categories')
+            $table->foreign('division_id')->references('id')->on('categories')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('circle')->references('id')->on('categories')
+            $table->foreign('circle_id')->references('id')->on('categories')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
 

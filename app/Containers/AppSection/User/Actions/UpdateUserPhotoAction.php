@@ -11,6 +11,7 @@ use App\Containers\AppSection\User\UI\API\Requests\UpdateUserPhotoRequest;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Exceptions\UpdateResourceFailedException;
 use App\Ship\Parents\Actions\Action as ParentAction;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class UpdateUserPhotoAction extends ParentAction
@@ -24,6 +25,7 @@ class UpdateUserPhotoAction extends ParentAction
      */
     public function run(UpdateUserPhotoRequest $request): ?User
     {
+
         if ($request->hasFile('photo')) {
             $image = $request->file('photo');
             $image_uploaded_path = $image->store("images/members", 'public');
@@ -32,6 +34,7 @@ class UpdateUserPhotoAction extends ParentAction
                 "image_url" => Storage::disk('public')->url($image_uploaded_path),
                 "mime" => $image->getClientMimeType()
             );
+            Log::debug(json_encode($uploadedImageResponse));
 
             return app(UpdateUserTask::class)->run(['photo' => $uploadedImageResponse['image_url']], $request->id);
         }

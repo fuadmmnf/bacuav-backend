@@ -44,7 +44,7 @@ class UpdateUserPhotoRequest extends ParentRequest
     public function authorize(): bool
     {
         return $this->check([
-            'hasAccess|isResourceOwner',
+            'hasAccess',
         ]);
     }
 }
