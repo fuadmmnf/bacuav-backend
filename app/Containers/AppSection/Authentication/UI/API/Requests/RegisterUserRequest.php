@@ -20,6 +20,9 @@ class RegisterUserRequest extends ParentRequest
      * Id's that needs decoding before applying the validation rules.
      */
     protected array $decode = [
+        'commissionerate_id',
+        'division_id',
+        'circle_id',
     ];
 
     /**
@@ -41,9 +44,9 @@ class RegisterUserRequest extends ParentRequest
             'name' => 'required|min:2|max:50',
             'name_bangla' => 'required|min:2',
             'designation' => 'required|in:RO,ARO',
-            'commissionerate' => 'required',
-            'division' => 'required',
-            'circle' => 'required',
+            'commissionerate_id' => 'required',
+            'division_id' => 'required',
+            'circle_id' => 'required',
             'address' => 'present|nullable',
 //            'gender' => 'in:male,female,unspecified',
 //            'photo' => 'present|image|nullable',

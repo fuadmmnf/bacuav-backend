@@ -17,9 +17,9 @@ return new class () extends Migration {
             $table->string('mobile')->unique();
             $table->string('email')->unique()->nullable();
             $table->enum('designation', ['RO', 'ARO'])->nullable();
-            $table->unsignedBigInteger('commissionerate')->nullable();
-            $table->unsignedBigInteger('division')->nullable();
-            $table->unsignedBigInteger('circle')->nullable();
+            $table->unsignedBigInteger('commissionerate_id')->nullable();
+            $table->unsignedBigInteger('division_id')->nullable();
+            $table->unsignedBigInteger('circle_id')->nullable();
             $table->string('address')->nullable();
             //            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

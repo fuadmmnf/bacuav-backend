@@ -11,7 +11,7 @@ return [
     |
     */
     'resource_types' => [
-        ['name' => 'commissioneratet', 'children' => [
+        ['name' => 'commissionerate', 'children' => [
             ['name' => 'division', 'children' => [
                 ['name' => 'circle'],
             ]],
