@@ -35,7 +35,8 @@ class UpdateElectionCandidateVoteRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            // 'id' => 'required'
+            'election_candidate_id' => 'required',
+            'voter_id' => 'required',
         ];
     }
 

@@ -25,6 +25,6 @@
 use App\Containers\AppSection\ElectionCandidateVote\UI\API\Controllers\GetAllElectionCandidateVotesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('election-candidate-votes', [GetAllElectionCandidateVotesController::class, 'getAllElectionCandidateVotes'])
+Route::get('election-candidate-votes', GetAllElectionCandidateVotesController::class)
     ->middleware(['auth:api']);
 

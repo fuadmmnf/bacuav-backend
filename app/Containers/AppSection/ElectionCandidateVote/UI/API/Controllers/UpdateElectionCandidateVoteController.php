@@ -21,7 +21,7 @@ class UpdateElectionCandidateVoteController extends ApiController
      * @throws IncorrectIdException
      * @throws NotFoundException
      */
-    public function updateElectionCandidateVote(UpdateElectionCandidateVoteRequest $request): array
+    public function __invoke(UpdateElectionCandidateVoteRequest $request): array
     {
         $electioncandidatevote = app(UpdateElectionCandidateVoteAction::class)->run($request);
 

@@ -20,7 +20,7 @@ class CreateElectionCandidateVoteController extends ApiController
      * @throws InvalidTransformerException
      * @throws IncorrectIdException
      */
-    public function createElectionCandidateVote(CreateElectionCandidateVoteRequest $request): JsonResponse
+    public function __invoke(CreateElectionCandidateVoteRequest $request): JsonResponse
     {
         $electioncandidatevote = app(CreateElectionCandidateVoteAction::class)->run($request);
 

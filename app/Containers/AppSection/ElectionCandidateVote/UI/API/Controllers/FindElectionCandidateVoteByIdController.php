@@ -14,7 +14,7 @@ class FindElectionCandidateVoteByIdController extends ApiController
     /**
      * @throws InvalidTransformerException|NotFoundException
      */
-    public function findElectionCandidateVoteById(FindElectionCandidateVoteByIdRequest $request): array
+    public function __invoke(FindElectionCandidateVoteByIdRequest $request): array
     {
         $electioncandidatevote = app(FindElectionCandidateVoteByIdAction::class)->run($request);
 
