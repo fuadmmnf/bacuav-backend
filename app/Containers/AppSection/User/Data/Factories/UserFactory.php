@@ -4,6 +4,7 @@ namespace App\Containers\AppSection\User\Data\Factories;
 
 use App\Containers\AppSection\User\Models\User;
 use App\Ship\Parents\Factories\Factory as ParentFactory;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -25,7 +26,7 @@ class UserFactory extends ParentFactory
             'address' => $this->faker->randomElement(['rajshahi', 'dhaka', 'chittagong']),
             'photo' => $this->faker->imageUrl(),
             'dob' => $this->faker->dateTimeBetween(startDate: '-50 years', endDate: '-20 yeras'),
-            'is_verified' => $this->faker->randomElement([true, true, false]),
+            'verified_at' => $this->faker->randomElement([Carbon::now(), null]),
             'joining_date' => $this->faker->dateTimeBetween(startDate: '-15 years', endDate: '-5 years'),
             'fee_collection_start' => $this->faker->dateTimeBetween(startDate: '-10 years', endDate: 'now'),
 //            'email_verified_at' => now(),

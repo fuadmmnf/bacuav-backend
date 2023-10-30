@@ -54,7 +54,7 @@ class UpdateUserRequest extends ParentRequest
             'dob' => 'sometimes|date|nullable',
             'joining_date' => 'sometimes|date|nullable',
             'fee_collection_start' => 'sometimes|date|nullable',
-            'is_verified' => 'sometimes|bool',
+            'verified_at' => 'sometimes|date',
         ];
     }
 

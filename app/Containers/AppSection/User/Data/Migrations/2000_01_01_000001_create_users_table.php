@@ -28,7 +28,7 @@ return new class () extends Migration {
             $table->date('dob')->nullable();
             $table->date('joining_date')->nullable();
             $table->date('fee_collection_start')->nullable();
-            $table->boolean('is_verified')->default(false);
+            $table->boolean('verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

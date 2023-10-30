@@ -42,7 +42,7 @@ class UpdateUserAction extends ParentAction
             'dob',
             'joining_date',
             'fee_collection_start',
-            'is_verified'
+            'verified_at'
         ]);
 
         return $this->updateUserTask->run($sanitizedData, $request->id);
