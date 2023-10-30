@@ -25,6 +25,6 @@
 use App\Containers\AppSection\Election\UI\API\Controllers\GetAllElectionsController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('elections', [GetAllElectionsController::class, 'getAllElections'])
+Route::get('elections', GetAllElectionsController::class)
     ->middleware(['auth:api']);
 

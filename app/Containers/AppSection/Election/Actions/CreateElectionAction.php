@@ -23,6 +23,8 @@ class CreateElectionAction extends ParentAction
             // add your request data here
             'title',
             'description',
+            'start_time',
+            'end_time',
             'parent_id',
         ]);
 

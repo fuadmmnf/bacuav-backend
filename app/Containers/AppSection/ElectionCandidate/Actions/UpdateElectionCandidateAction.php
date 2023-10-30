@@ -23,6 +23,10 @@ class UpdateElectionCandidateAction extends ParentAction
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'candidate_id',
+            'description',
+            'name',
+            'photo',
         ]);
 
         return app(UpdateElectionCandidateTask::class)->run($data, $request->id);

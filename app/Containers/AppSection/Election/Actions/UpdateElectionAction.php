@@ -4,6 +4,7 @@ namespace App\Containers\AppSection\Election\Actions;
 
 use Apiato\Core\Exceptions\IncorrectIdException;
 use App\Containers\AppSection\Election\Models\Election;
+use App\Containers\AppSection\Election\Tasks\FindElectionByIdTask;
 use App\Containers\AppSection\Election\Tasks\UpdateElectionTask;
 use App\Containers\AppSection\Election\UI\API\Requests\UpdateElectionRequest;
 use App\Ship\Exceptions\NotFoundException;
@@ -25,15 +26,22 @@ class UpdateElectionAction extends ParentAction
         $data = $request->sanitizeInput([
             // add your request data here
             'title',
-            'description',
             'status',
+            'description',
+            'start_time',
+            'end_time',
+            'parent_id',
         ]);
-        if ($data['status'] == 'ongoing')
-            $data['start_time'] = Carbon::now();
-        if ($data['status'] == 'finished')
-            $data['end_time'] = Carbon::now();
-        if ($data['status'] == 'published')
-            $data['publish_time'] = Carbon::now();
+        $election = app(FindElectionByIdTask::class)->run($request->id);
+        if ($election->status != $data['status']) {
+            if ($data['status'] == 'ongoing')
+                $data['start_time'] = Carbon::now();
+            if ($data['status'] == 'finished')
+                $data['end_time'] = Carbon::now();
+            if ($data['status'] == 'published')
+                $data['publish_time'] = Carbon::now();
+        }
+
 
         return app(UpdateElectionTask::class)->run($data, $request->id);
     }

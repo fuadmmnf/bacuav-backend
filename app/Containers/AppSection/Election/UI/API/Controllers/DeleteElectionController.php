@@ -17,7 +17,7 @@ class DeleteElectionController extends ApiController
      * @throws DeleteResourceFailedException
      * @throws NotFoundException
      */
-    public function deleteElection(DeleteElectionRequest $request): JsonResponse
+    public function __invoke(DeleteElectionRequest $request): JsonResponse
     {
         app(DeleteElectionAction::class)->run($request);
 

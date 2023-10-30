@@ -17,7 +17,7 @@ class GetAllElectionCandidatesController extends ApiController
      * @throws CoreInternalErrorException
      * @throws RepositoryException
      */
-    public function getAllElectionCandidates(GetAllElectionCandidatesRequest $request): array
+    public function __invoke(GetAllElectionCandidatesRequest $request): array
     {
         $electioncandidates = app(GetAllElectionCandidatesAction::class)->run($request);
 

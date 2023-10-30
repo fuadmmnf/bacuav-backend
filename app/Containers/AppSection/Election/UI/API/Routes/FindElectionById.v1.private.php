@@ -25,6 +25,6 @@
 use App\Containers\AppSection\Election\UI\API\Controllers\FindElectionByIdController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('elections/{id}', [FindElectionByIdController::class, 'findElectionById'])
+Route::get('elections/{id}', FindElectionByIdController::class)
     ->middleware(['auth:api']);
 

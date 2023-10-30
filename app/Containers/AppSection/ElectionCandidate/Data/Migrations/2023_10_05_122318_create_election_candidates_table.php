@@ -13,8 +13,10 @@ return new class extends Migration {
         Schema::create('election_candidates', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('election_id');
-            $table->unsignedBigInteger('candidate_id');
-            $table->string('description');
+            $table->unsignedBigInteger('candidate_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
             //$table->softDeletes();
 

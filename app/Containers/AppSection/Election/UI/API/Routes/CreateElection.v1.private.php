@@ -25,6 +25,6 @@
 use App\Containers\AppSection\Election\UI\API\Controllers\CreateElectionController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('elections', [CreateElectionController::class, 'createElection'])
+Route::post('elections', CreateElectionController::class)
     ->middleware(['auth:api']);
 

@@ -3,6 +3,7 @@
 namespace App\Containers\AppSection\ElectionCandidate\UI\API\Requests;
 
 use App\Ship\Parents\Requests\Request as ParentRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateElectionCandidateRequest extends ParentRequest
 {
@@ -35,7 +36,10 @@ class UpdateElectionCandidateRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            // 'id' => 'required'
+            'candidate_id' => 'present|nullable',
+            'description' => 'present',
+            'name' => Rule::excludeIf($this->candidate_id != null),
+            'photo' => Rule::excludeIf($this->candidate_id != null),
         ];
     }
 

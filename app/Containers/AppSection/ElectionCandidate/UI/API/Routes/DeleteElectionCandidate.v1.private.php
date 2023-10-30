@@ -24,7 +24,7 @@
 
 use App\Containers\AppSection\ElectionCandidate\UI\API\Controllers\DeleteElectionCandidateController;
 use Illuminate\Support\Facades\Route;
-
-Route::delete('election-candidates/{id}', [DeleteElectionCandidateController::class, 'deleteElectionCandidate'])
+//
+Route::delete('election-candidates/{id}', DeleteElectionCandidateController::class)
     ->middleware(['auth:api']);
 

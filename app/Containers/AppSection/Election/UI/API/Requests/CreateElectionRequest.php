@@ -38,6 +38,8 @@ class CreateElectionRequest extends ParentRequest
             // 'id' => 'required',
             'title' => 'required',
             'description' => 'required',
+            'start_time' => 'required|date',
+            'end_time' => 'required|date',
             'parent_id' => 'present|nullable',
         ];
     }

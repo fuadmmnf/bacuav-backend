@@ -26,6 +26,10 @@ class ElectionTransformer extends ParentTransformer
         $response = [
             'object' => $election->getResourceKey(),
             'id' => $election->getHashedKey(),
+            'title' => $election->title,
+            'description' => $election->description,
+            'start_time' => $election->start_time,
+            'end_time' => $election->end_time,
         ];
 
         return $this->ifAdmin([

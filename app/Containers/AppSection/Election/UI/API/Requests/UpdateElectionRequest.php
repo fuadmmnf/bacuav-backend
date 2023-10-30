@@ -36,9 +36,12 @@ class UpdateElectionRequest extends ParentRequest
     {
         return [
             // 'id' => 'required'
-            'title' => 'required',
-            'description' => 'required',
-            'status' => 'required',
+            'title' => 'sometimes',
+            'description' => 'sometimes',
+            'status' => 'sometimes',
+            'start_time' => 'sometimes|date',
+            'end_time' => 'sometimes|date',
+            'parent_id' => 'sometimes|nullable',
         ];
     }
 

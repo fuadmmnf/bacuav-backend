@@ -25,6 +25,6 @@
 use App\Containers\AppSection\ElectionCandidate\UI\API\Controllers\UpdateElectionCandidateController;
 use Illuminate\Support\Facades\Route;
 
-Route::patch('election-candidates/{id}', [UpdateElectionCandidateController::class, 'updateElectionCandidate'])
+Route::patch('election-candidates/{id}', UpdateElectionCandidateController::class)
     ->middleware(['auth:api']);
 
