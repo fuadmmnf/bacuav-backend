@@ -16,6 +16,6 @@ class GetAllElectionCandidatesAction extends ParentAction
      */
     public function run(GetAllElectionCandidatesRequest $request): mixed
     {
-        return app(GetAllElectionCandidatesTask::class)->run(include_votes_count: $request->user()->hasAdminRole());
+        return app(GetAllElectionCandidatesTask::class)->addRequestCriteria(null, ['election_id'])->run(include_votes_count: $request->user()->hasAdminRole());
     }
 }

@@ -11,6 +11,7 @@ class ElectionCandidateVoteRepository extends ParentRepository
      */
     protected $fieldSearchable = [
         'id' => '=',
+        'election_candidate_id' => '=',
         // ...
     ];
 }
