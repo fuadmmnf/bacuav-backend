@@ -4,6 +4,7 @@ namespace App\Containers\AppSection\ElectionCandidate\Tasks;
 
 use Apiato\Core\Exceptions\CoreInternalErrorException;
 use App\Containers\AppSection\ElectionCandidate\Data\Repositories\ElectionCandidateRepository;
+use App\Ship\Criterias\WithRelationCountCriteria;
 use App\Ship\Parents\Tasks\Task as ParentTask;
 use Prettus\Repository\Exceptions\RepositoryException;
 
@@ -18,8 +19,11 @@ class GetAllElectionCandidatesTask extends ParentTask
      * @throws CoreInternalErrorException
      * @throws RepositoryException
      */
-    public function run(): mixed
+    public function run($include_votes_count = false): mixed
     {
+        if($include_votes_count){
+            $this->repository->pushCriteria(new WithRelationCountCriteria(['votes']));
+        }
         return $this->addRequestCriteria()->repository->paginate();
     }
 }

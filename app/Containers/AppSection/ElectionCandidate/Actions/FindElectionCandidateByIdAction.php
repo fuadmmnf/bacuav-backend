@@ -15,6 +15,6 @@ class FindElectionCandidateByIdAction extends ParentAction
      */
     public function run(FindElectionCandidateByIdRequest $request): ElectionCandidate
     {
-        return app(FindElectionCandidateByIdTask::class)->run($request->id);
+        return app(FindElectionCandidateByIdTask::class)->run($request->id, include_votes_count: $request->user()->hasAdminRole());
     }
 }
