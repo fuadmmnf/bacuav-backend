@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('description')->nullable();
-            $table->enum('status', ['draft', 'ongoing', 'finished', 'published'])->default('draft');
+            $table->enum('status', ['draft', 'ongoing', 'finished', 'published', 'archived'])->default('draft');
             $table->date('start_time')->nullable();
             $table->date('end_time')->nullable();
             $table->date('publish_time')->nullable();
