@@ -20,6 +20,6 @@ class GetAllUsersAction extends ParentAction
      */
     public function run(): mixed
     {
-        return $this->getAllUsersTask->run();
+        return $this->getAllUsersTask->addRequestCriteria(null, ['commissionerate_id', 'division_id', 'circle_id'])->run();
     }
 }
