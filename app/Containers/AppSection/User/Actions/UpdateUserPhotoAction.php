@@ -7,7 +7,7 @@ use App\Containers\AppSection\User\Models\User;
 use App\Containers\AppSection\User\Notifications\PasswordUpdatedNotification;
 use App\Containers\AppSection\User\Tasks\UpdateUserTask;
 use App\Containers\AppSection\User\UI\API\Requests\UpdateUserPasswordRequest;
-use App\Containers\AppSection\User\UI\API\Requests\UpdateCandidatePhotoRequest;
+use App\Containers\AppSection\User\UI\API\Requests\UpdateUserPhotoRequest;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Exceptions\UpdateResourceFailedException;
 use App\Ship\Parents\Actions\Action as ParentAction;
@@ -23,7 +23,7 @@ class UpdateUserPhotoAction extends ParentAction
      * @throws NotFoundException
      * @throws UpdateResourceFailedException
      */
-    public function run(UpdateCandidatePhotoRequest $request): ?User
+    public function run(UpdateUserPhotoRequest $request): ?User
     {
 
         if ($request->hasFile('photo')) {
