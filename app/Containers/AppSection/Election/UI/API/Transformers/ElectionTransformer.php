@@ -9,7 +9,7 @@ use League\Fractal\Resource\Collection;
 class ElectionTransformer extends ParentTransformer
 {
     protected array $defaultIncludes = [
-        'children',
+//        'children',
     ];
 
     protected array $availableIncludes = [
