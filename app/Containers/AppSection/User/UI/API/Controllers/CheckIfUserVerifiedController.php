@@ -19,6 +19,6 @@ class CheckIfUserVerifiedController extends ApiController
     public function __invoke(CheckIfUserVerifiedRequest $request): \Illuminate\Http\JsonResponse
     {
         $user = app(FindUserByIdentifierTask::class)->run(identifierName: 'mobile', identifier: $request->query('mobile'));
-        return $this->noContent(status: $user && $user->is_verified? 200: 401);
+        return $this->noContent(status: $user && $user->verified_at != null? 200: 401);
     }
 }

@@ -35,7 +35,7 @@ class User extends ParentUserModel implements MustVerifyEmail
         'dob',
         'joining_date',
         'fee_collection_start',
-        'is_verified',
+        'verified_at',
 //        'gender',
 //        'birth',
     ];
