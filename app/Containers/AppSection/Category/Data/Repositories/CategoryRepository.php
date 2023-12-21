@@ -15,7 +15,7 @@ class CategoryRepository extends ParentRepository
         'id' => '=',
         'name' => '=',
         'type' => '=',
-//        'parent_id' => '=',
+        'parent_id' => '=',
     ];
 
     public function getDecendentsHierarchy($root_id)

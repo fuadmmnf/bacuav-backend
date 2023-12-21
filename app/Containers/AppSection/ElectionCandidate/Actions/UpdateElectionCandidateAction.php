@@ -26,7 +26,6 @@ class UpdateElectionCandidateAction extends ParentAction
             'candidate_id',
             'description',
             'name',
-            'photo',
         ]);
 
         return app(UpdateElectionCandidateTask::class)->run($data, $request->id);

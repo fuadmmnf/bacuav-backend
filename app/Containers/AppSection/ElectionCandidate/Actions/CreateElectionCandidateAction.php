@@ -25,7 +25,6 @@ class CreateElectionCandidateAction extends ParentAction
             'candidate_id',
             'description',
             'name',
-            'photo',
         ]);
 
         return app(CreateElectionCandidateTask::class)->run($data);

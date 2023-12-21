@@ -11,7 +11,7 @@ class CategoryTransformer extends ParentTransformer
 {
     use HashIdTrait;
     protected array $defaultIncludes = [
-        'children',
+//        'children',
     ];
 
     protected array $availableIncludes = [

@@ -10,20 +10,17 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('election_candidates', function (Blueprint $table) {
+        Schema::create('election_voters', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('election_id');
-            $table->unsignedBigInteger('candidate_id')->nullable();
-            $table->string('name')->nullable();
-            $table->string('photo')->nullable();
-            $table->string('description')->nullable();
+            $table->unsignedBigInteger('voter_id');
             $table->timestamps();
             //$table->softDeletes();
-
             $table->foreign('election_id')->references('id')->on('elections')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('candidate_id')->references('id')->on('users')
+            $table->foreign('voter_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
+            //$table->softDeletes();
         });
     }
 
@@ -32,6 +29,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('election_candidates');
+        Schema::dropIfExists('election_voters');
     }
 };
