@@ -14,4 +14,5 @@ class ElectionCandidateRepository extends ParentRepository
         // ...
         'election_id' => '=',
     ];
+    protected ?bool $allowDisablePagination = true;
 }

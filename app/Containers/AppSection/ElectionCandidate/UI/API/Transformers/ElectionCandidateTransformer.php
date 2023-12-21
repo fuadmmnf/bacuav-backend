@@ -23,7 +23,6 @@ class ElectionCandidateTransformer extends ParentTransformer
     }
 
 
-
     public function transform(ElectionCandidate $electioncandidate): array
     {
 
@@ -33,10 +32,10 @@ class ElectionCandidateTransformer extends ParentTransformer
             'name' => $electioncandidate->name,
             'photo' => $electioncandidate->photo,
             'description' => $electioncandidate->description,
+            'vote_counts' => $electioncandidate->votes_count,
         ];
 
         return $this->ifAdmin([
-            'vote_counts' => $electioncandidate->votes_count,
             'real_id' => $electioncandidate->id,
             'created_at' => $electioncandidate->created_at,
             'updated_at' => $electioncandidate->updated_at,
