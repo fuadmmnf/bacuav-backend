@@ -18,7 +18,7 @@ return new class extends Migration {
             //$table->softDeletes();
             $table->foreign('election_candidate_id')->references('id')->on('election_candidates')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('voter_id')->references('id')->on('elections')
+            $table->foreign('voter_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }

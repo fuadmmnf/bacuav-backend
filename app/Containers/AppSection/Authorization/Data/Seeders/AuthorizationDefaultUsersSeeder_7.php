@@ -5,6 +5,7 @@ namespace App\Containers\AppSection\Authorization\Data\Seeders;
 use App\Containers\AppSection\User\Actions\CreateAdminAction;
 use App\Ship\Exceptions\CreateResourceFailedException;
 use App\Ship\Parents\Seeders\Seeder as ParentSeeder;
+use Carbon\Carbon;
 
 class AuthorizationDefaultUsersSeeder_7 extends ParentSeeder
 {
@@ -35,7 +36,7 @@ class AuthorizationDefaultUsersSeeder_7 extends ParentSeeder
             'password' => 'admin',
             'name' => 'Super Admin',
             'name_bangla' => 'admin',
-            'is_verified' => true
+            'verified_at' => Carbon::now(),
         ];
 
         $this->createAdminAction->run($userData);

@@ -19,11 +19,11 @@ class GetAllCategoriesTask extends ParentTask
      * @throws CoreInternalErrorException
      * @throws RepositoryException
      */
-    public function run(bool $is_root_categories = false): mixed
+    public function run(): mixed
     {
-        if($is_root_categories) {
-            $this->repository->pushCriteria(new IsNullCriteria('parent_id'));
-        }
+//        if($is_root_categories) {
+//            $this->repository->pushCriteria(new IsNullCriteria('parent_id'));
+//        }
 
         return $this->addRequestCriteria()->repository->paginate();
     }

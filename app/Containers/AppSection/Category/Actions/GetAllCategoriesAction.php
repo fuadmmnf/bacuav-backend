@@ -16,6 +16,6 @@ class GetAllCategoriesAction extends ParentAction
      */
     public function run(GetAllCategoriesRequest $request): mixed
     {
-        return app(GetAllCategoriesTask::class)->run($request->parent_id == 'parent_id:null');
+        return app(GetAllCategoriesTask::class)->addRequestCriteria(null, ['parent_id'])->run();
     }
 }

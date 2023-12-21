@@ -22,7 +22,7 @@ return new class extends Migration {
 
             $table->foreign('election_id')->references('id')->on('elections')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('candidate_id')->references('id')->on('elections')
+            $table->foreign('candidate_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }

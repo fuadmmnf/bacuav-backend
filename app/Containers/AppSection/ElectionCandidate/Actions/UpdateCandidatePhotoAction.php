@@ -11,6 +11,7 @@ use App\Ship\Exceptions\UpdateResourceFailedException;
 use App\Ship\Parents\Actions\Action as ParentAction;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class UpdateCandidatePhotoAction extends ParentAction
 {
@@ -26,15 +27,11 @@ class UpdateCandidatePhotoAction extends ParentAction
 
         if ($request->hasFile('photo')) {
             $image = $request->file('photo');
-            $image_uploaded_path = $image->store("images/candidates", 'public');
-            $uploadedImageResponse = array(
-                "image_name" => basename($image_uploaded_path),
-                "image_url" => Storage::disk('public')->url($image_uploaded_path),
-                "mime" => $image->getClientMimeType()
-            );
-            Log::debug(json_encode($uploadedImageResponse));
+            $extension = $image->getClientOriginalExtension();
+            $imageName = Str::random(20) . '.' . $extension;
 
-            return app(UpdateElectionCandidateTask::class)->run(['photo' => $uploadedImageResponse['image_url']], $request->id);
+            $image->move(public_path("images/candidates"), $imageName);
+            return app(UpdateElectionCandidateTask::class)->run(['photo' => '/images/candidates/' . $imageName], $request->id);
         }
         return null;
     }

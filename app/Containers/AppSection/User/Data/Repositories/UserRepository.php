@@ -12,7 +12,7 @@ class UserRepository extends ParentRepository
         'mobile' => 'like',
         'email' => 'like',
         'designation' => '=',
-        'is_verified' => '=',
+        'verified_at' => '!=',
         'address' => '=',
         'commissionerate' => '=',
         'division' => '=',
