@@ -23,8 +23,8 @@ class CreateElectionCandidateVoteAction extends ParentAction
         $data = $request->sanitizeInput([
             // add your request data here
             'election_candidate_id',
-            'voter_id',
         ]);
+        $data['voter_id'] = $request->user()->id;
         return app(CreateElectionCandidateVoteTask::class)->run($data);
     }
 }
