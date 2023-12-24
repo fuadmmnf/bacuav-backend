@@ -20,6 +20,7 @@ class CreateElectionCandidateRequest extends ParentRequest
      */
     protected array $decode = [
         // 'id',
+        'election_id',
     ];
 
     /**
@@ -41,7 +42,6 @@ class CreateElectionCandidateRequest extends ParentRequest
             'candidate_id' => 'present|nullable',
             'description' => 'present',
             'name' => Rule::excludeIf($this->candidate_id != null),
-            'photo' => Rule::excludeIf($this->candidate_id != null),
         ];
     }
 

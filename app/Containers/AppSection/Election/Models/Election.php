@@ -3,9 +3,11 @@
 namespace App\Containers\AppSection\Election\Models;
 
 use App\Ship\Parents\Models\Model as ParentModel;
+use Kalnoy\Nestedset\NodeTrait;
 
 class Election extends ParentModel
 {
+    use NodeTrait;
     protected $fillable = [
         'title',
         'description',
