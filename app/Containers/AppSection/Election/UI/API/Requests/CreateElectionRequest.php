@@ -38,9 +38,9 @@ class CreateElectionRequest extends ParentRequest
         return [
             // 'id' => 'required',
             'title' => 'required',
-            'description' => 'required',
-            'start_time' => 'required|date',
-            'end_time' => 'required|date',
+            'description' => 'present|nullable',
+            'start_time' => 'present|nullable|date',
+            'end_time' => 'present|nullable|date',
             'parent_id' => 'present|nullable',
         ];
     }
