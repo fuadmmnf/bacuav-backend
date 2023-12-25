@@ -41,7 +41,7 @@ class CreateElectionCandidateRequest extends ParentRequest
             'election_id' => 'required',
             'candidate_id' => 'present|nullable',
             'description' => 'present',
-            'name' => Rule::excludeIf($this->candidate_id != null),
+            'name' => 'present|nullable',
         ];
     }
 
