@@ -49,6 +49,7 @@ class UserTransformer extends ParentTransformer
             'object' => $user->getResourceKey(),
             'id' => $user->getHashedKey(),
             'name' => $user->name,
+            'email'=>$user->email,
             'name_bangla' => $user->name,
             'mobile' => $user->mobile,
             'commissionerate_id' => $this->encode($user->commissionerate_id),

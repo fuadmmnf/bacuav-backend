@@ -14,7 +14,7 @@ class UpdateUserRequest extends ParentRequest
      * Define which Roles and/or Permissions has access to this request.
      */
     protected array $access = [
-        'permissions' => 'update-users',
+        'permissions' => '',
         'roles' => '',
     ];
 
@@ -36,8 +36,8 @@ class UpdateUserRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            'mobile' => 'sometimes|unique:users,mobile',
-            'email' => 'sometimes|email|unique:users,email',
+            'mobile' => 'sometimes|unique:users,mobile,' . $this->id,
+            'email' => 'sometimes|email|unique:users,email.'. $this->id,
             'password' => [
                 'sometimes',
                 User::getPasswordValidationRules(),

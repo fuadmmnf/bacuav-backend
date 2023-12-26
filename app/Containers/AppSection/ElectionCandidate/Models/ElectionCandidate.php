@@ -14,6 +14,7 @@ class ElectionCandidate extends ParentModel
         'election_id',
         'candidate_id',
         'description',
+        'name',
         'photo',
     ];
 

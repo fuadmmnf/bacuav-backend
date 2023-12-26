@@ -11,6 +11,9 @@ class ElectionRepository extends ParentRepository
      */
     protected $fieldSearchable = [
         'id' => '=',
+        'title' => 'like',
+        'status' => 'in',
+
         // ...
     ];
 }

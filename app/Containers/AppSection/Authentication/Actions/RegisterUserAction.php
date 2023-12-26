@@ -8,16 +8,14 @@ use App\Containers\AppSection\Authentication\Tasks\SendVerificationEmailTask;
 use App\Containers\AppSection\Authentication\UI\API\Requests\RegisterUserRequest;
 use App\Containers\AppSection\User\Actions\CreateUserAndAssignRolesSubAction;
 use App\Containers\AppSection\User\Models\User;
-use App\Containers\AppSection\User\Tasks\CreateUserTask;
 use App\Containers\AppSection\User\Tasks\UpdateUserTask;
 use App\Ship\Exceptions\CreateResourceFailedException;
 use App\Ship\Parents\Actions\Action as ParentAction;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
 class RegisterUserAction extends ParentAction
 {
-
-
     /**
      * @throws CreateResourceFailedException
      * @throws IncorrectIdException
@@ -38,21 +36,23 @@ class RegisterUserAction extends ParentAction
 //            'gender' => 'in:male,female,unspecified',
             'dob',
         ]);
-
+        if ($request->user()->hasRole('admin')) {
+            $data['verified_at'] = Carbon::now();
+        }
         $user = app(CreateUserAndAssignRolesSubAction::class)->run(request: $sanitizedData, roleNames: ['member']);
         if ($request->hasFile('photo')) {
             $image = $request->file('photo');
-            $image_uploaded_path = $image->store("images/members", 'public');
-            $uploadedImageResponse = array(
-                "image_name" => basename($image_uploaded_path),
-                "image_url" => Storage::disk('public')->url($image_uploaded_path),
-                "mime" => $image->getClientMimeType()
-            );
+            $image_uploaded_path = $image->store('images/members', 'public');
+            $uploadedImageResponse = [
+                'image_name' => basename($image_uploaded_path),
+                'image_url' => Storage::disk('public')->url($image_uploaded_path),
+                'mime' => $image->getClientMimeType(),
+            ];
 
             $user = app(UpdateUserTask::class)->run(['photo' => $uploadedImageResponse['image_url']], $user->id);
         }
-//        $user->notify(new Welcome());
-//        $this->sendVerificationEmailTask->run($user, $request->verification_url);
+        //        $user->notify(new Welcome());
+        //        $this->sendVerificationEmailTask->run($user, $request->verification_url);
 
         return $user;
     }
