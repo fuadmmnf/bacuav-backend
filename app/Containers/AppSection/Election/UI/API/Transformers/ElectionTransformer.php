@@ -28,6 +28,7 @@ class ElectionTransformer extends ParentTransformer
             'id' => $election->getHashedKey(),
             'title' => $election->title,
             'description' => $election->description,
+            'status' => $election->status,
             'start_time' => $election->start_time,
             'end_time' => $election->end_time,
         ];
