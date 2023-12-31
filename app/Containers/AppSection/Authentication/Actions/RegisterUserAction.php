@@ -37,7 +37,7 @@ class RegisterUserAction extends ParentAction
             'dob',
         ]);
         if ($request->user()->hasRole('admin')) {
-            $data['verified_at'] = Carbon::now();
+            $sanitizedData['verified_at'] = Carbon::now();
         }
         $user = app(CreateUserAndAssignRolesSubAction::class)->run(request: $sanitizedData, roleNames: ['member']);
         if ($request->hasFile('photo')) {
