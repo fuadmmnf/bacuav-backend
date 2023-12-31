@@ -6,6 +6,7 @@ use App\Containers\AppSection\Authentication\Notifications\VerifyEmail;
 use App\Containers\AppSection\Authentication\Traits\AuthenticationTrait;
 use App\Containers\AppSection\Authorization\Models\Role;
 use App\Containers\AppSection\Authorization\Traits\AuthorizationTrait;
+use App\Containers\AppSection\Category\Models\Category;
 use App\Ship\Contracts\MustVerifyEmail;
 use App\Ship\Parents\Models\UserModel as ParentUserModel;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -73,4 +74,18 @@ class User extends ParentUserModel implements MustVerifyEmail
     //            get: fn (?string $value): ?string => is_null($value) ? null : strtolower($value),
     //        );
     //    }
+
+
+    public function commissionerate(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function division(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function circle(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
