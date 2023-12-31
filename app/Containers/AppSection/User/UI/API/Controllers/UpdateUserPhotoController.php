@@ -9,6 +9,7 @@ use App\Containers\AppSection\User\UI\API\Requests\UpdateCandidatePhotoRequest;
 use App\Containers\AppSection\User\UI\API\Requests\UpdateUserPhotoRequest;
 use App\Containers\AppSection\User\UI\API\Transformers\UserTransformer;
 use App\Ship\Parents\Controllers\ApiController;
+use Illuminate\Http\Request;
 
 class UpdateUserPhotoController extends ApiController
 {

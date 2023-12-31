@@ -35,8 +35,9 @@ class RegisterUserAction extends ParentAction
             'address',
 //            'gender' => 'in:male,female,unspecified',
             'dob',
+            'joining_date'
         ]);
-        if ($request->user()->hasRole('admin')) {
+        if ($request->user() != null && $request->user()->hasRole('admin')) {
             $sanitizedData['verified_at'] = Carbon::now();
         }
         $user = app(CreateUserAndAssignRolesSubAction::class)->run(request: $sanitizedData, roleNames: ['member']);

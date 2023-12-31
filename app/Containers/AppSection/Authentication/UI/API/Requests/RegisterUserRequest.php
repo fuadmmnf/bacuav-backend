@@ -36,7 +36,7 @@ class RegisterUserRequest extends ParentRequest
     {
         return [
             'mobile' => 'required|unique:users,mobile',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'present|nullable|email|unique:users,email',
             'password' => [
                 'required',
                 User::getPasswordValidationRules(),
@@ -50,7 +50,8 @@ class RegisterUserRequest extends ParentRequest
             'address' => 'present|nullable',
 //            'gender' => 'in:male,female,unspecified',
 //            'photo' => 'present|image|nullable',
-            'dob' => 'present|nullable',
+            'dob' => 'present|nullable|date',
+            'joining_date' => 'sometimes|nullable|date',
         ];
     }
 

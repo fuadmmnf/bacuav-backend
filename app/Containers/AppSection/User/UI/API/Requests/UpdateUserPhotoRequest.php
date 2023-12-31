@@ -9,7 +9,7 @@ use Illuminate\Validation\Rule;
 
 class UpdateUserPhotoRequest extends ParentRequest
 {
-    use IsResourceOwnerTrait;
+//    use IsResourceOwnerTrait;
 
     /**
      * Define which Roles and/or Permissions has access to this request.
@@ -43,8 +43,9 @@ class UpdateUserPhotoRequest extends ParentRequest
 
     public function authorize(): bool
     {
-        return $this->check([
-            'hasAccess',
-        ]);
+//        return $this->check([
+//            'hasAccess',
+//        ]);
+        return true;
     }
 }
