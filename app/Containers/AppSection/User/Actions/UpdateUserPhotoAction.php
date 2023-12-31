@@ -34,7 +34,7 @@ class UpdateUserPhotoAction extends ParentAction
             Log::debug($imageName);
 
             $image->move(public_path("images/members"), $imageName);
-            return app(UpdateUserTask::class)->run(['photo' => '/images/members/' . $imageName], $request->id);
+            return app(UpdateUserTask::class)->run(['photo' => 'images/members/' . $imageName], $request->id);
         }
         return null;
     }
