@@ -20,5 +20,4 @@
 use App\Containers\AppSection\User\UI\API\Controllers\CheckIfUserVerifiedController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('users/verified/check', CheckIfUserVerifiedController::class)
-    ->middleware(['auth:api']);
+Route::get('users/verified/check', CheckIfUserVerifiedController::class);

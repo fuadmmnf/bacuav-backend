@@ -10,6 +10,7 @@ use App\Containers\AppSection\User\UI\API\Requests\FindUserByIdRequest;
 use App\Containers\AppSection\User\UI\API\Transformers\UserTransformer;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Parents\Controllers\ApiController;
+use Illuminate\Support\Facades\Log;
 
 class CheckIfUserVerifiedController extends ApiController
 {
@@ -19,6 +20,7 @@ class CheckIfUserVerifiedController extends ApiController
     public function __invoke(CheckIfUserVerifiedRequest $request): \Illuminate\Http\JsonResponse
     {
         $user = app(FindUserByIdentifierTask::class)->run(identifierName: 'mobile', identifier: $request->query('mobile'));
-        return $this->noContent(status: $user && $user->verified_at != null? 200: 401);
+        Log::debug($user);
+        return $this->noContent(status: ($user && $user->verified_at != null)? 200: 401);
     }
 }
