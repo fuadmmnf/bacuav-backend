@@ -5,13 +5,13 @@ namespace App\Containers\AppSection\Category\Data\Seeders;
 use App\Containers\AppSection\Category\Models\Category;
 use App\Ship\Parents\Seeders\Seeder as ParentSeeder;
 
-class CreateCategoriesSeeder_1 extends ParentSeeder
+class CreateRegionCategoriesSeeder_1 extends ParentSeeder
 {
     public function run() //creating category nesting assuming max 1 depth
     {
         if (is_local()) {
             srand(config('app.seeder-seed'));
-            $categoryTypes = config('appSection-category.resource_types', ['category', 'sub-category']);
+            $categoryTypes = ['commissionerate', 'division', 'circle'];
 
             foreach (range(0, 5) as $it) {
                 foreach ($categoryTypes as $categoryType) {

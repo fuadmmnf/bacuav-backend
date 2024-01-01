@@ -17,7 +17,8 @@ return [
             ]],
         ],
         ],
-
+        ['name' => 'district', 'children' => [],
+        ],
     ],
 
 ];
