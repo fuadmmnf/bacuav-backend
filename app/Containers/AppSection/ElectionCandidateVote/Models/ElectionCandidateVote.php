@@ -11,7 +11,7 @@ class ElectionCandidateVote extends ParentModel
 {
     protected $fillable = [
         'election_candidate_id',
-        'candidate_id',
+        'voter_id',
     ];
 
     protected $hidden = [

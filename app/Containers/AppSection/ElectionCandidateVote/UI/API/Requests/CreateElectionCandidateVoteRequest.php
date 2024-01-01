@@ -19,6 +19,7 @@ class CreateElectionCandidateVoteRequest extends ParentRequest
      */
     protected array $decode = [
         // 'id',
+        'election_candidate_id'
     ];
 
     /**
