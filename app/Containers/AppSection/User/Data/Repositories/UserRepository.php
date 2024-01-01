@@ -17,6 +17,7 @@ class UserRepository extends ParentRepository
         'commissionerate_id' => '=',
         'division_id' => '=',
         'circle_id' => '=',
+        'district_id' => '=',
         'id' => '=',
 //        'role.name' => '=',
         'roles.name' => '=',

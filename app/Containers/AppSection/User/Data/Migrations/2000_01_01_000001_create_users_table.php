@@ -20,6 +20,7 @@ return new class () extends Migration {
             $table->unsignedBigInteger('commissionerate_id')->nullable();
             $table->unsignedBigInteger('division_id')->nullable();
             $table->unsignedBigInteger('circle_id')->nullable();
+            $table->unsignedBigInteger('district_id')->nullable();
             $table->string('address')->nullable();
             //            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -35,11 +36,13 @@ return new class () extends Migration {
 
 
             $table->foreign('commissionerate_id')->references('id')->on('categories')
-                ->onUpdate('cascade')->onDelete('cascade');
+                ->cascadeOnUpdate()->nullOnDelete();
             $table->foreign('division_id')->references('id')->on('categories')
-                ->onUpdate('cascade')->onDelete('cascade');
+                ->cascadeOnUpdate()->nullOnDelete();
             $table->foreign('circle_id')->references('id')->on('categories')
-                ->onUpdate('cascade')->onDelete('cascade');
+                ->cascadeOnUpdate()->nullOnDelete();
+            $table->foreign('district_id')->references('id')->on('categories')
+                ->cascadeOnUpdate()->nullOnDelete();
         });
 
 

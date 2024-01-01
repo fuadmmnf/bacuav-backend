@@ -19,6 +19,7 @@ class User extends ParentUserModel implements MustVerifyEmail
 {
     use AuthorizationTrait;
     use AuthenticationTrait;
+
 //    use SoftDeletes;
 
     protected $fillable = [
@@ -31,6 +32,7 @@ class User extends ParentUserModel implements MustVerifyEmail
         'commissionerate_id',
         'division_id',
         'circle_id',
+        'district_id',
         'address',
         'photo',
         'dob',
@@ -80,11 +82,18 @@ class User extends ParentUserModel implements MustVerifyEmail
     {
         return $this->belongsTo(Category::class);
     }
+
     public function division(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
+
     public function circle(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function district(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }

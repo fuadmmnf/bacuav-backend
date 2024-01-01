@@ -22,6 +22,7 @@ class UserTransformer extends ParentTransformer
         'commissionerate',
         'division',
         'circle',
+        'district',
     ];
 
     protected array $defaultIncludes = [
@@ -43,6 +44,11 @@ class UserTransformer extends ParentTransformer
         return $this->nullableItem($user->circle, new CategoryTransformer());
     }
 
+    public function includeDistrict(User $user): Item|Primitive
+    {
+        return $this->nullableItem($user->district, new CategoryTransformer());
+    }
+
     public function transform(User $user): array
     {
         $response = [
@@ -55,6 +61,7 @@ class UserTransformer extends ParentTransformer
             'commissionerate_id' => $this->encode($user->commissionerate_id),
             'division_id' => $this->encode($user->division_id),
             'circle_id' => $this->encode($user->circle_id),
+            'district_id' => $this->encode($user->district_id),
             'designation' => $user->designation,
             'address' => $user->address,
             'photo' => $user->photo,

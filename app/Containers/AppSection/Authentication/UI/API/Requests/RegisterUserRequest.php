@@ -47,6 +47,7 @@ class RegisterUserRequest extends ParentRequest
             'commissionerate_id' => 'required',
             'division_id' => 'required',
             'circle_id' => 'required',
+            'district_id' => 'sometimes|nullable',
             'address' => 'present|nullable',
 //            'gender' => 'in:male,female,unspecified',
 //            'photo' => 'present|image|nullable',

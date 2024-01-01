@@ -32,6 +32,7 @@ class RegisterUserAction extends ParentAction
             'commissionerate_id',
             'division_id',
             'circle_id',
+            'district_id',
             'address',
 //            'gender' => 'in:male,female,unspecified',
             'dob',
