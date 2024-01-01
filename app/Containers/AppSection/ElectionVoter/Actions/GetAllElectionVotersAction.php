@@ -16,6 +16,6 @@ class GetAllElectionVotersAction extends ParentAction
      */
     public function run(GetAllElectionVotersRequest $request): mixed
     {
-        return app(GetAllElectionVotersTask::class)->run();
+        return app(GetAllElectionVotersTask::class)->addRequestCriteria(null, ['election_id', 'voter_id'])->run();
     }
 }
