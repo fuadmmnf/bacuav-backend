@@ -29,8 +29,8 @@
  * @apiUse             UserSuccessSingleResponse
  */
 
-use App\Containers\AppSection\ElectionCandidate\UI\API\Controllers\UpdateCommitteeMemberPhotoController;
+use App\Containers\AppSection\ElectionCandidate\UI\API\Controllers\UpdateCandidatePhotoController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('election-candidates/{id}/photo', UpdateCommitteeMemberPhotoController::class)
+Route::post('election-candidates/{id}/photo', UpdateCandidatePhotoController::class)
     ->middleware(['auth:api']);

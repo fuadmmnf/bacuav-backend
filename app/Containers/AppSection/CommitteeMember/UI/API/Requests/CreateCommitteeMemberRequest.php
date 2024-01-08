@@ -39,6 +39,7 @@ class CreateCommitteeMemberRequest extends ParentRequest
             // 'id' => 'required',
             'committee_id' => 'required',
             'name' => 'required',
+            'designation' => 'required',
             'description' => 'present|nullable',
         ];
     }

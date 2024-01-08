@@ -9,6 +9,7 @@ class CommitteeMember extends ParentModel
     protected $fillable = [
         'committee_id',
         'name',
+        'designation',
         'description',
         'photo',
     ];

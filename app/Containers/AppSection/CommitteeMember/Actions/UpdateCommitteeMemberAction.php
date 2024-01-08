@@ -24,6 +24,7 @@ class UpdateCommitteeMemberAction extends ParentAction
         $data = $request->sanitizeInput([
             'committee_id',
             'name',
+            'designation',
             'description',
         ]);
 

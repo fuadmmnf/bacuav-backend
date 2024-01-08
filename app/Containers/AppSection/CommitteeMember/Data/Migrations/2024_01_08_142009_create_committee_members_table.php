@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('committee_id');
             $table->string('name')->nullable();
+            $table->string('designation')->nullable();
             $table->string('photo')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();

@@ -37,6 +37,7 @@ class UpdateCommitteeMemberRequest extends ParentRequest
         return [
             'name' => 'sometimes',
             'description' => 'sometimes|nullable',
+            'designation' => 'sometimes|nullable',
         ];
     }
 

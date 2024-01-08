@@ -24,6 +24,7 @@ class CommitteeMemberTransformer extends ParentTransformer
             'id' => $committeemember->getHashedKey(),
             'committee_id' => $this->encode($committeemember->committee_id),
             'name' => $committeemember->name,
+            'designation' => $committeemember->designation,
             'description' => $committeemember->description,
             'photo' => $committeemember->photo,
         ];
