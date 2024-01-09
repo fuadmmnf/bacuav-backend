@@ -13,7 +13,11 @@ class CommitteeMemberFactory extends ParentFactory
     {
         return [
             // Add your model fields here
-            // 'name' => $this->faker->name(),
+            'committee_id' => null,
+            'name' => $this->faker->name(),
+            'designation' => $this->faker->jobTitle(),
+            'description' => $this->faker->paragraph(),
+            'photo' => $this->faker->imageUrl(),
         ];
     }
 }

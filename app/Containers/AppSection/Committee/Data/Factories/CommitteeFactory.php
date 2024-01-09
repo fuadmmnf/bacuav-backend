@@ -11,9 +11,12 @@ class CommitteeFactory extends ParentFactory
 
     public function definition(): array
     {
+        $year =  $this->faker->year;
         return [
             // Add your model fields here
-            // 'name' => $this->faker->name(),
+             'name' => $year . 'Random Committee',
+            'description' => $this->faker->paragraph(),
+            'year' => $year,
         ];
     }
 }

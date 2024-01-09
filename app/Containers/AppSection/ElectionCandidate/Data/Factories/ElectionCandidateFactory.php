@@ -13,7 +13,10 @@ class ElectionCandidateFactory extends ParentFactory
     {
         return [
             // Add your model fields here
-            // 'name' => $this->faker->name(),
+            'election_id' => null,
+            'name' => $this->faker->name(),
+            'description' => $this->faker->paragraph(),
+            'photo' => $this->faker->imageUrl(),
         ];
     }
 }
