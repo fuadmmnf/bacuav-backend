@@ -25,6 +25,5 @@
 use App\Containers\AppSection\Committee\UI\API\Controllers\GetAllCommitteesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('committees', [GetAllCommitteesController::class, 'getAllCommittees'])
-    ->middleware(['auth:api']);
+Route::get('committees', [GetAllCommitteesController::class, 'getAllCommittees']);
 

@@ -11,7 +11,7 @@ class UpdateElectionRequest extends ParentRequest
      */
     protected array $access = [
         'permissions' => '',
-        'roles' => '',
+        'roles' => 'admin',
     ];
 
     /**

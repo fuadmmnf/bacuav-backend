@@ -25,6 +25,5 @@
 use App\Containers\AppSection\CommitteeMember\UI\API\Controllers\FindCommitteeMemberByIdController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('committee-members/{id}', [FindCommitteeMemberByIdController::class, 'findCommitteeMemberById'])
-    ->middleware(['auth:api']);
+Route::get('committee-members/{id}', [FindCommitteeMemberByIdController::class, 'findCommitteeMemberById']);
 
