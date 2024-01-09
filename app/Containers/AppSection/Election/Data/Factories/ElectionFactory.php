@@ -15,7 +15,7 @@ class ElectionFactory extends ParentFactory
         $start =  $this->faker->dateTime();
         return [
             // Add your model fields here
-            'title' => $this->faker->words(),
+            'title' => $this->faker->name(),
             'description' => $this->faker->paragraph(),
             'status' => 'ongoing',
             'start_time' => $start,

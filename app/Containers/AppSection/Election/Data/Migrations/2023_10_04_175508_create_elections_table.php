@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('elections', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->enum('status', ['draft', 'ongoing', 'finished', 'published', 'archived'])->default('draft');
             $table->date('start_time')->nullable();
             $table->date('end_time')->nullable();

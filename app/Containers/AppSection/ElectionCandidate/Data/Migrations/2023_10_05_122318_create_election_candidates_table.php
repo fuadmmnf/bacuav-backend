@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('candidate_id')->nullable();
             $table->string('name')->nullable();
             $table->string('photo')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
             //$table->softDeletes();
 
