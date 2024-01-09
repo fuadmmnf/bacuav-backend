@@ -11,7 +11,12 @@ class CreateRegionCategoriesSeeder_1 extends ParentSeeder
     {
         if (is_local()) {
             srand(config('app.seeder-seed'));
-            $categoryTypes = ['commissionerate', 'division', 'circle'];
+            $categoryTypes =  [['name' => 'commissionerate', 'children' => [
+                ['name' => 'division', 'children' => [
+                    ['name' => 'circle'],
+                ]],
+            ],
+            ]];
 
             foreach (range(0, 5) as $it) {
                 foreach ($categoryTypes as $categoryType) {
