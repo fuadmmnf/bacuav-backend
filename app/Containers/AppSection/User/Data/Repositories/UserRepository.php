@@ -22,6 +22,7 @@ class UserRepository extends ParentRepository
 //        'role.name' => '=',
         'roles.name' => '=',
     ];
+    protected ?bool $allowDisablePagination = true;
 
     public function model(): string
     {
