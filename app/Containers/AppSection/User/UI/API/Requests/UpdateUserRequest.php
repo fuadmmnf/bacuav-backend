@@ -36,6 +36,7 @@ class UpdateUserRequest extends ParentRequest
     public function rules(): array
     {
         return [
+            'member_id' => 'sometimes|unique:users,member_id,' . $this->id,
             'mobile' => 'sometimes|unique:users,mobile,' . $this->id,
             'email' => 'sometimes|email|unique:users,email.'. $this->id,
             'password' => [

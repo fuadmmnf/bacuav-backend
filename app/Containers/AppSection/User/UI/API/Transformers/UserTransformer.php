@@ -54,6 +54,7 @@ class UserTransformer extends ParentTransformer
         $response = [
             'object' => $user->getResourceKey(),
             'id' => $user->getHashedKey(),
+            'member_id' => $user->member_id,
             'name' => $user->name,
             'email'=>$user->email,
             'name_bangla' => $user->name,

@@ -23,6 +23,7 @@ class User extends ParentUserModel implements MustVerifyEmail
 //    use SoftDeletes;
 
     protected $fillable = [
+        'member_id',
         'name',
         'name_bangla',
         'mobile',

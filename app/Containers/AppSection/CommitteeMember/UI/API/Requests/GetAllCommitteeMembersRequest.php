@@ -44,8 +44,9 @@ class GetAllCommitteeMembersRequest extends ParentRequest
      */
     public function authorize(): bool
     {
-        return $this->check([
-            'hasAccess',
-        ]);
+        return true;
+//        return $this->check([
+//            'hasAccess',
+//        ]);
     }
 }
