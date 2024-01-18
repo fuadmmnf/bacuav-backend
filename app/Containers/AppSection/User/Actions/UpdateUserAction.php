@@ -28,6 +28,7 @@ class UpdateUserAction extends ParentAction
     public function run(UpdateUserRequest $request): User
     {
         $sanitizedData = $request->sanitizeInput([
+            'member_id',
             'mobile',
             'email',
 //            'password',
