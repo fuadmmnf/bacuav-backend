@@ -23,6 +23,7 @@ class RegisterUserRequest extends ParentRequest
         'commissionerate_id',
         'division_id',
         'circle_id',
+        'district_id',
     ];
 
     /**
