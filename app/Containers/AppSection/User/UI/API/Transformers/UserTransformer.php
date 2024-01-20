@@ -57,7 +57,7 @@ class UserTransformer extends ParentTransformer
             'member_id' => $user->member_id,
             'name' => $user->name,
             'email'=>$user->email,
-            'name_bangla' => $user->name,
+            'name_bangla' => $user->name_bangla,
             'mobile' => $user->mobile,
             'commissionerate_id' => $this->encode($user->commissionerate_id),
             'division_id' => $this->encode($user->division_id),
