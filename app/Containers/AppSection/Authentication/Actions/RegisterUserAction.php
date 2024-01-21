@@ -23,6 +23,7 @@ class RegisterUserAction extends ParentAction
     public function run(RegisterUserRequest $request): User
     {
         $sanitizedData = $request->sanitizeInput([
+            'member_id',
             'mobile',
             'email',
             'password',
