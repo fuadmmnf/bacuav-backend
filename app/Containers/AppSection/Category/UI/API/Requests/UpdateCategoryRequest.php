@@ -19,6 +19,7 @@ class UpdateCategoryRequest extends ParentRequest
      */
     protected array $decode = [
         'id',
+        'parent_id',
     ];
 
     /**
@@ -36,6 +37,9 @@ class UpdateCategoryRequest extends ParentRequest
     {
         return [
             // 'id' => 'required'
+            'name' => 'required|string|min:2|max:100',
+            'type' => 'required|string|in:' . implode(',', collect(config('appSection-category.resource_types', ['category', 'sub-category']))->flatten()->all()),
+            'parent_id' => 'present|nullable',
         ];
     }
 

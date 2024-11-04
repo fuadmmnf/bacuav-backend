@@ -23,6 +23,7 @@ class UpdateCategoryAction extends ParentAction
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'name', 'type', 'parent_id',
         ]);
 
         return app(UpdateCategoryTask::class)->run($data, $request->id);
