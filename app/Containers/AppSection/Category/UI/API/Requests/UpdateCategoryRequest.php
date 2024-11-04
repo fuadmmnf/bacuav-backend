@@ -38,8 +38,8 @@ class UpdateCategoryRequest extends ParentRequest
         return [
             // 'id' => 'required'
             'name' => 'required|string|min:2|max:100',
-            'type' => 'required|string|in:' . implode(',', collect(config('appSection-category.resource_types', ['category', 'sub-category']))->flatten()->all()),
-            'parent_id' => 'present|nullable',
+            'type' => 'sometimes|string|in:' . implode(',', collect(config('appSection-category.resource_types', ['category', 'sub-category']))->flatten()->all()),
+            'parent_id' => 'sometimes|nullable',
         ];
     }
 

@@ -25,6 +25,6 @@
 use App\Containers\AppSection\Category\UI\API\Controllers\DeleteCategoryController;
 use Illuminate\Support\Facades\Route;
 
-Route::delete('categories/{id}', [DeleteCategoryController::class])
+Route::delete('categories/{id}', DeleteCategoryController::class)
     ->middleware(['auth:api']);
 
