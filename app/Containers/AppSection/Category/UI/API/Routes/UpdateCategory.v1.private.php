@@ -25,6 +25,6 @@
 use App\Containers\AppSection\Category\UI\API\Controllers\UpdateCategoryController;
 use Illuminate\Support\Facades\Route;
 
-Route::patch('categories/{id}', [UpdateCategoryController::class])
+Route::patch('categories/{id}', UpdateCategoryController::class)
     ->middleware(['auth:api']);
 
