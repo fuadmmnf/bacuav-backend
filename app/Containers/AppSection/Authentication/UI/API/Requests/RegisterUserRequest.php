@@ -23,6 +23,7 @@ class RegisterUserRequest extends ParentRequest
         'commissionerate_id',
         'division_id',
         'circle_id',
+        'district_id',
     ];
 
     /**
@@ -35,6 +36,7 @@ class RegisterUserRequest extends ParentRequest
     public function rules(): array
     {
         return [
+            'member_id' => 'sometimes|unique:users,member_id',
             'mobile' => 'required|unique:users,mobile',
             'email' => 'present|nullable|email|unique:users,email',
             'password' => [

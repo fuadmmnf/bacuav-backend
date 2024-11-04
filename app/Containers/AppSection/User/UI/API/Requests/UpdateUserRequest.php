@@ -23,6 +23,10 @@ class UpdateUserRequest extends ParentRequest
      */
     protected array $decode = [
         'id',
+        'commissionerate_id',
+        'division_id',
+        'circle_id',
+        'district_id',
     ];
 
     /**
@@ -38,7 +42,7 @@ class UpdateUserRequest extends ParentRequest
         return [
             'member_id' => 'sometimes|unique:users,member_id,' . $this->id,
             'mobile' => 'sometimes|unique:users,mobile,' . $this->id,
-            'email' => 'sometimes|email|unique:users,email.'. $this->id,
+            'email' => 'sometimes|email|unique:users,email,'. $this->id,
             'password' => [
                 'sometimes',
                 User::getPasswordValidationRules(),
@@ -46,9 +50,10 @@ class UpdateUserRequest extends ParentRequest
             'name' => 'sometimes|min:2|max:50',
             'name_bangla' => 'sometimes|min:2',
             'designation' => 'sometimes|in:RO,ARO',
-            'commissionerate' => 'sometimes',
-            'division' => 'sometimes',
-            'circle' => 'sometimes',
+            'commissionerate_id' => 'sometimes',
+            'division_id' => 'sometimes',
+            'circle_id' => 'sometimes',
+            'district_id' => 'sometimes',
             'address' => 'sometimes|nullable',
 //            'gender' => 'in:male,female,unspecified',
 //            'photo' => 'sometimes|image|nullable',
