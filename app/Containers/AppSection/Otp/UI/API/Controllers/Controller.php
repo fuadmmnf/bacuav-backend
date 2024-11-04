@@ -29,7 +29,7 @@ class Controller extends ApiController
 
         if (filter_var(config('appSection-otp.enable_sms'), FILTER_VALIDATE_BOOLEAN)) {
             app(SendSmsTask::class)->run(receivers: [$otp->identifier],
-                message: "EduAid Verification: Please enter the OTP code {$otp->code} in the appropriate field to confirm your mobile number."
+                message: "BACUAV Verification: Please enter the OTP code {$otp->code} in the appropriate field to confirm your mobile number."
             );
         }
 
