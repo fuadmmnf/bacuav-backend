@@ -15,7 +15,7 @@ return new class () extends Migration {
             $table->date('officer_joining_date')->nullable()->after('member_type');
             $table->string('blood_group')->nullable()->after('officer_joining_date');
             $table->string('social_media_link')->nullable()->after('blood_group');
-            $table->string('educational_qualification')->nullable()->after('social_media_id');
+            $table->string('educational_qualification')->nullable()->after('social_media_link');
             $table->string('last_education_institution')->nullable()
                 ->after('educational_qualification');
             $table->string('spouse_profession')->nullable()->after('last_education_institution');
@@ -32,7 +32,7 @@ return new class () extends Migration {
                 'member_type',
                 'officer_joining_date',
                 'blood_group',
-                'social_media_id',
+                'social_media_link',
                 'educational_qualification',
                 'last_education_institution',
                 'spouse_profession',
