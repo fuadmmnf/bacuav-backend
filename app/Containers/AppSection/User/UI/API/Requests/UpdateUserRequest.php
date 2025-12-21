@@ -61,6 +61,12 @@ class UpdateUserRequest extends ParentRequest
             'joining_date' => 'sometimes|date|nullable',
             'fee_collection_start' => 'sometimes|date|nullable',
             'verified_at' => 'sometimes|date',
+            'blood_group' => 'sometimes',
+            'social_media_id' => 'sometimes',
+            'educational_qualification' => 'sometimes',
+            'last_education_institution' => 'sometimes',
+            'spouse_profession' => 'sometimes',
+            'officer_joining_date' => 'sometimes|date',
         ];
     }
 

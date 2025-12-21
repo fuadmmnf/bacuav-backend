@@ -37,9 +37,16 @@ class User extends ParentUserModel implements MustVerifyEmail
         'address',
         'photo',
         'dob',
+        'member_type',
         'joining_date',
         'fee_collection_start',
         'verified_at',
+        'blood_group',
+        'social_media_id',
+        'educational_qualification',
+        'last_education_institution',
+        'spouse_profession',
+        'officer_joining_date'
 //        'gender',
 //        'birth',
     ];

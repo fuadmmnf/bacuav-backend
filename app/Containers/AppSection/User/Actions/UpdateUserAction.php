@@ -44,7 +44,13 @@ class UpdateUserAction extends ParentAction
             'dob',
             'joining_date',
             'fee_collection_start',
-            'verified_at'
+            'verified_at',
+            'officer_joining_date',
+            'blood_group',
+            'social_media_id',
+            'educational_qualification',
+            'last_education_institution',
+            'spouse_profession',
         ]);
 
         return $this->updateUserTask->run($sanitizedData, $request->id);

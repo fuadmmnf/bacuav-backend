@@ -34,10 +34,16 @@ class RegisterUserAction extends ParentAction
             'division_id',
             'circle_id',
             'district_id',
+            'officer_joining_date',
             'address',
 //            'gender' => 'in:male,female,unspecified',
             'dob',
-            'joining_date'
+            'joining_date',
+            'blood_group',
+            'social_media_id',
+            'educational_qualification',
+            'last_education_institution',
+            'spouse_profession',
         ]);
         if ($request->user() != null && $request->user()->hasRole('admin')) {
             $sanitizedData['verified_at'] = Carbon::now();

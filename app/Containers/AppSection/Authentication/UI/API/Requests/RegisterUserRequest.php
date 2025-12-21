@@ -55,6 +55,12 @@ class RegisterUserRequest extends ParentRequest
 //            'photo' => 'present|image|nullable',
             'dob' => 'present|nullable|date',
             'joining_date' => 'sometimes|nullable|date',
+            'blood_group' => 'sometimes',
+            'social_media_id' => 'sometimes',
+            'educational_qualification' => 'sometimes',
+            'last_education_institution' => 'sometimes',
+            'spouse_profession' => 'sometimes',
+            'officer_joining_date' => 'sometimes|date',
         ];
     }
 

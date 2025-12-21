@@ -19,9 +19,13 @@ class UserRepository extends ParentRepository
         'division_id' => '=',
         'circle_id' => '=',
         'district_id' => '=',
+        'member_type' => '=',
         'id' => '=',
 //        'role.name' => '=',
         'roles.name' => '=',
+        'blood_group' => 'in',
+        'educational_qualification' => 'in',
+        'last_education_institution' => 'like',
     ];
     protected ?bool $allowDisablePagination = true;
 
