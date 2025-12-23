@@ -72,7 +72,7 @@ class UserTransformer extends ParentTransformer
             'verified_at' => $user->verified_at,
             'officer_joining_date' => $user->officer_joining_date,
             'blood_group' => $user->blood_group,
-            'social_media_id' => $user->social_media_id,
+            'social_media_link' => $user->social_media_link,
             'educational_qualification' => $user->educational_qualification,
             'last_education_institution' => $user->last_education_institution,
             'spouse_profession' => $user->spouse_profession,

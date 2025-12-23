@@ -40,7 +40,7 @@ class RegisterUserAction extends ParentAction
             'dob',
             'joining_date',
             'blood_group',
-            'social_media_id',
+            'social_media_link',
             'educational_qualification',
             'last_education_institution',
             'spouse_profession',

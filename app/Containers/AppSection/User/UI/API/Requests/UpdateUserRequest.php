@@ -62,7 +62,7 @@ class UpdateUserRequest extends ParentRequest
             'fee_collection_start' => 'sometimes|date|nullable',
             'verified_at' => 'sometimes|date',
             'blood_group' => 'sometimes',
-            'social_media_id' => 'sometimes',
+            'social_media_link' => 'sometimes',
             'educational_qualification' => 'sometimes',
             'last_education_institution' => 'sometimes',
             'spouse_profession' => 'sometimes',

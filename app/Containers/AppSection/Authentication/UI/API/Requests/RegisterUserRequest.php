@@ -56,7 +56,7 @@ class RegisterUserRequest extends ParentRequest
             'dob' => 'present|nullable|date',
             'joining_date' => 'sometimes|nullable|date',
             'blood_group' => 'sometimes',
-            'social_media_id' => 'sometimes',
+            'social_media_link' => 'sometimes',
             'educational_qualification' => 'sometimes',
             'last_education_institution' => 'sometimes',
             'spouse_profession' => 'sometimes',

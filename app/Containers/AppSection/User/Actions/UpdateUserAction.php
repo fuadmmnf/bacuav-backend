@@ -47,7 +47,7 @@ class UpdateUserAction extends ParentAction
             'verified_at',
             'officer_joining_date',
             'blood_group',
-            'social_media_id',
+            'social_media_link',
             'educational_qualification',
             'last_education_institution',
             'spouse_profession',
