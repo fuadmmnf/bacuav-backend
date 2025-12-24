@@ -10,7 +10,7 @@ class FindUserByIdRequest extends ParentRequest
      * Define which Roles and/or Permissions has access to this request.
      */
     protected array $access = [
-        'permissions' => 'search-users',
+        'permissions' => '',
         'roles' => '',
     ];
 
