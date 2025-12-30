@@ -23,7 +23,7 @@ class UserRepository extends ParentRepository
         'id' => '=',
 //        'role.name' => '=',
         'roles.name' => '=',
-        'blood_group' => 'in',
+        'blood_group' => 'like',
         'educational_qualification' => 'in',
         'last_education_institution' => 'like',
     ];
